@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>practice.maven.project</groupId>
+  <artifactId>MavenFirstJagseer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>myMavenFirst</name>
+  <description>My First Maven Prject</description>
+  <build>
+  <plugins>
+  <plugin>  
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <fork>true</fork>
+			<executable>C:\Program Files\Java\jdk1.8.0_131\bin\javac</executable>
+        </configuration>
+    </plugin>
+  </plugins>
+  </build>
+  <packaging>jar</packaging>
+ 
+<properties>
+<suiteXmlFile>src/test/resources/testNG.xml</suiteXmlFile> 
+</properties>
+ 
+  <dependencies>
+	<dependency>
+	        <groupId>org.seleniumhq.selenium</groupId>
+	        <artifactId>selenium-java</artifactId>
+	        <version>3.4.0</version>
+	 </dependency> 
+   	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>6.11</version>
+	    <scope>test</scope>
+	</dependency>
+  </dependencies>
+  
+   
+</project>

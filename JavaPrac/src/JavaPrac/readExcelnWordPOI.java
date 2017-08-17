@@ -30,7 +30,7 @@ public class readExcelnWordPOI {
 	{
 		System.out.println("-----------DOC CREATing--------");
 		XWPFDocument doc = new XWPFDocument();
-		OutputStream fis = new FileOutputStream("E:/My Data/JMJK/selenium/Java Workspace/JMJK/src/JavaPrac/temp.docx");
+		OutputStream fis = new FileOutputStream("E:\\Selenium\\EclipseWorkspace\\JavaPrac\\src\\JavaPrac\\temp.docx");
 		
 		XWPFParagraph para1 = doc.createParagraph();  //creates blank doc
 		XWPFRun run1 = para1.createRun(); //used to add/change the text in a specified element/region.
@@ -49,7 +49,7 @@ public class readExcelnWordPOI {
 
 	public static void readWord() throws IOException 
 	{
-		File fle = new File("E:/My Data/JMJK/selenium/Java Workspace/JMJK/src/JavaPrac/temp.docx");
+		File fle = new File("E:\\Selenium\\EclipseWorkspace\\JavaPrac\\src\\JavaPrac\\temp.docx");
 		FileInputStream fis = new FileInputStream(fle);
 		XWPFDocument doc = new XWPFDocument(fis);
 		XWPFWordExtractor extractDoc = new XWPFWordExtractor(doc);
@@ -60,7 +60,7 @@ public class readExcelnWordPOI {
 
 	static void readExcel() throws IOException
 	{
-			File fle = new File("E:\\My Data\\JMJK\\selenium\\Java Workspace\\JMJK\\src\\JavaPrac\\PDatasheet.xlsx");
+			File fle = new File("E:\\Selenium\\EclipseWorkspace\\JavaPrac\\src\\JavaPrac\\PDatasheet.xlsx");
 			FileInputStream fis = new FileInputStream(fle);
 			XSSFWorkbook wb = new XSSFWorkbook(fis);
 			XSSFSheet sh = wb.getSheet("Login");

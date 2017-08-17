@@ -83,14 +83,14 @@ public class selBasicsConceptPrac {
 		//Navigate back
 		drv.navigate().back();
 		System.out.println("back from youtube home");
-		drv.findElement(By.tagName("a"));  // will find all them links  
+		drv.findElements(By.tagName("a"));  // will find all them links  
 		drv.findElement(By.cssSelector("input#id.classname"));  
 		
 		//Screenshot
 		File snpsht = ((TakesScreenshot)drv).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(snpsht, new File("C:\\h.jpg"));
 		
-		//Navigate bfrwd
+		//Navigate frwd
 			drv.navigate().forward();
 			System.out.println("again on youtube home");
 			

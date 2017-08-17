@@ -10,7 +10,7 @@ public class readFlatFile {
 	public static void main(String[] args) throws IOException 
 	{
 		int flag=0;
-		File fle = new File("E:\\My Data\\JMJK\\selenium\\Java Workspace\\SelPrac\\src\\PracSel\\AutoIt.txt");
+		File fle = new File("E:\\Selenium\\EclipseWorkspace\\SelPrac\\src\\com\\prac\\selbasics\\AutoIt.txt");
 		FileReader fr = new FileReader(fle);
 		BufferedReader br = new BufferedReader(fr);
 		String strLine;

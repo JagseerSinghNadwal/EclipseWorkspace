@@ -23,8 +23,8 @@ public class FileRead {
 	{
 		//File readwrite first word
 	//Using Filetwriter+Scanner
-		File fleO = new File("E:\\My Data\\JMJK\\selenium\\Java Workspace\\SelPrac\\src\\PracSel\\AutiITFileWriter.txt");
-		File fleI = new File("E:\\My Data\\JMJK\\selenium\\Java Workspace\\SelPrac\\src\\PracSel\\AutoIt.txt");
+		File fleO = new File("E:\\Selenium\\EclipseWorkspace\\SelPrac\\src\\com\\prac\\selbasics\\AutiITFileWriter.txt");
+		File fleI = new File("E:\\Selenium\\EclipseWorkspace\\SelPrac\\src\\com\\prac\\selbasics\\AutoIt.txt");
 		Scanner sc = new Scanner(fleI);
 		FileWriter fw = new FileWriter(fleO); 
 		while (sc.hasNextLine())
@@ -38,7 +38,7 @@ public class FileRead {
 		sc.close();
 		
 	//Using Printwriter  and FileReader+BufferReader
-				String fleOp = new String("E:\\My Data\\JMJK\\selenium\\Java Workspace\\SelPrac\\src\\PracSel\\AutiITPrintWriter.txt");
+				String fleOp = new String("E:\\Selenium\\EclipseWorkspace\\SelPrac\\src\\com\\prac\\selbasics\\AutiITPrintWriter.txt");
 				String strLine, tempStr;
 				FileReader fr = new FileReader(fleI);
 				BufferedReader br = new BufferedReader(fr);
