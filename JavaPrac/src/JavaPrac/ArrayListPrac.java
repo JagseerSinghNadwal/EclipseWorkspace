@@ -61,6 +61,7 @@ al.add("#$@$I@");
  	  else
     System.out.println(str);
  }
+  
  System.out.println("cleared the al list");
  al.clear();
  for (Object str:al)
