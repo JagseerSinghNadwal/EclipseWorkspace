@@ -10,8 +10,11 @@ import java.awt.Toolkit;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -39,6 +42,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 
 import junit.framework.Assert;
 
@@ -111,6 +115,18 @@ public class selBasicsConceptPrac {
 		for(WebElement we:ls)
 		{
 			System.out.println(we);
+		}
+		
+		File fle = new File("E:\\Selenium\\EclipseWorkspace\\JavaPrac\\src\\JavaPrac\\temp.docx");
+		FileInputStream fis = new FileInputStream(fle);
+		Properties p = new Properties();
+		p.load(fis);
+		p.getProperty("sd");
+		Enumeration<Object> strKeys= p.keys();
+		while(strKeys.hasMoreElements())
+		{
+			String temp = (String) strKeys.nextElement();
+			System.out.println(p.getProperty(temp));
 		}
 		
 		//element status check
@@ -218,6 +234,10 @@ public class selBasicsConceptPrac {
 		ffp.setAssumeUntrustedCertificateIssuer(true);
 		drv1 = new FirefoxDriver(ffp);
 		
+		// Set preferences for file type 
+		ffp.setPreference("browser.helperApps.neverAsk.openFile", "application/octet-stream");
+		WebDriver driver=new FirefoxDriver(ffp);
+
 		//secure certificate issue fix in IE
 		drv1.navigate().to("javascript:document.getElementByID('Overridelink').click()");
 		
@@ -336,13 +356,20 @@ public class selBasicsConceptPrac {
 			assertTrue(drv.findElement(By.cssSelector("Body")).getText().matches("^[\\s\\S]")); //OR
 			assertTrue(drv.findElement(By.id("if")).getText().matches("jags"));    //OR
 			assertEquals("jasgs", drv.findElement(By.id("if")).getText());
+			org.testng.Assert.assertEquals("1", "1");
 			}
 			catch(Error e)
 			{
-				System.out.println(e.getStackTrace());
+				System.out.println(e.getStackTrace());  
+				throw new SkipException("Skipped it");   //skip exception
 			}
 			//Verify --Verify Element Present  // Assert without Try Catch/If-else
 			Assert.assertEquals(0, drv.findElements(By.id("locator")).size());
+			
+			/* Printing class name and Id of the thread on using which test method got executed
+			System.out.println("Test Case One in " + getClass().getSimpleName()
+					+ " with Thread Id:- " + Thread.currentThread().getId());
+			*/
 		}	
 
 }	
